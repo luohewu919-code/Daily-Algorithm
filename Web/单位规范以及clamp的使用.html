@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-单位规范以及布局规范</title>
+</head>
+<style>
+    /* 使用clamp(),vw,vh,rem进行规范 */
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-size: 16px;
+    }
+    .container{
+        max-width: 1200px;
+        /* 注意：块状盒子默认width为100% */
+        background: linear-gradient(40deg,red,yellow);
+        box-sizing: border-box;
+        margin: 50px auto;
+        padding: 20px auto;
+    }
+    .container .example{
+        width: 90%;
+        height: 30vh;
+        background: skyblue;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        /* 注意display:flex;写完了一定要把下面两个代码写了，因为不写默认是scrath */
+        justify-content: center;
+        align-items: center;
+    }
+    .example .button{
+        display: inline-block;
+        /* 注意对于按钮我们一般是设置padding,如果是a标签的按钮，我们设置inlineo-block */
+        padding: 10px 20px;
+        background: palegreen;
+
+    }
+    .example h1,h2{
+        display: block;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Summary</h1>
+        <div class="example">
+            <h1>大标题</h1>
+            <h4>正文标题</h4>
+            <a href="#" class="button">点击</a>
+        </div>
+        <div class="wrap">This is a div. I would like to use something special to change traditional performance.As we all know, "max-width" can't spill over into content, so I choose it.</div>
+        <div class="unit">Of course,'px', a usual unit, is made use of font-size or measure of size. When we take advantage of 'px', it always results in overflow. For this reason, I recommend us to use 'vh', 'vw' and 'rem' so on. What is of most importance is that choose unit properly. Arcoording to MDN, 'vh' and 'vw' are relative to the width of brower. 'rem' is relative to unit of html.</div>
+        <div class="clamp">Clamp is of great assitance for programmer to suit different device. For example, when we use iphone to admire the web, the vital promblem is that we can't admire smoothly in destop. Base in this point, choose a max ande min, and the middle use unit of 'vw', which can resolve our promblem effectively.</div>
+    </div>
+</body>
+</html>
