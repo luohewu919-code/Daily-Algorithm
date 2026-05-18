@@ -1,5 +1,8 @@
 //03-反转链表：
 struct ListNode* reverseList(struct ListNode* head) {
+	if (head == NULL || head->next == NULL) {
+		return head;	//只有一个节点，直接返回就行
+	}
 	struct ListNode* cur = head;
 	struct ListNode* prev = NULL;	//注意：prev指向head之前的那个NULL
 	while (cur != NULL) {
@@ -21,5 +24,10 @@ struct ListNode* reverseList(struct ListNode* head) {
 //难点：
 //方法选用
 //内部循环执行顺序的把握
+
+//注意点：
+//1.return NULL->next；会报错，也就是说不能return cur->next;
+//2.temp在循环内定义：因为一旦在循环外定义了temp，它就无法再受到循环的影响，而移动了
+
 
 
