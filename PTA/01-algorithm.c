@@ -2,6 +2,7 @@
 double fact(int n) {
 	if (n == 0 || n == 1) {
 		return 1;	//递归的终止条件：0! = 1! = 1
+		//终止条件必有return
 	}
 	return n * fact(n - 1);	//执行条件
 }
